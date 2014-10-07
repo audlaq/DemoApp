@@ -9,15 +9,15 @@ namespace :db do
 end
 
 def db_seed_users
-    path=Rails.root.join('db','seeds','users.yml')
-    puts "Seeding file #{path}"
-    File.open(path) do |file|
-      YAML.load_documents(file) do |doc|
-        doc.keys.sort.each{|key|
-          puts "Seeding key #{key}"
-          attributes = doc[key]
-          db_seed_user(attributes)
-        }
-    	end
+	path=Rails.root.join('db','seeds','users.yml')
+	puts "Seeding file #{path}"
+	File.open(path) do |file|
+		YAML.load_documents(file) do |doc|
+	        doc.keys.sort.each{|key|
+			puts "Seeding key #{key}"
+			attributes = doc[key]
+			db_seed_user(attributes)
+			}
+		end
     end
   end
