@@ -1,9 +1,9 @@
 alice:
-	name: 'Alice Adams'
-	mail: 'alice@example.com'
+    name: 'Alice Adams'
+    mail: 'alice@example.com'
 bob:
-	name: 'Bob Brown'
-	mail: 'bob@example.com'
+    name: 'Bob Brown'
+    mail: 'bob@example.com'
 carol:
-	name: 'Carol Cox'
-	mail: 'carol@example.com'	
+    name: 'Carol Cox'
+    mail: 'carol@example.com'   

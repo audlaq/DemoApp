@@ -1,8 +1,8 @@
 namespace :db do
     namespace :seed do
-            desc "Seed users from db/seed/users.yml"
-            task :users => :environment do
-                db_seed_users
+        desc "Seed users from db/seed/users.yml"
+        task :users => :environment do
+            db_seed_users
         end
     end
 end
