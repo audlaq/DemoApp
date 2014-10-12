@@ -16,6 +16,7 @@ def db_seed_users
                 puts "Seeding key #{key}"
                 attributes = doc[key]
                 create_a_seed_user(attributes)
+                db_seed_user(attributes)
             end
         end
     end
@@ -25,15 +26,14 @@ def create_a_seed_user(attributes)
   User.create(attributes)
 end
 
-# def db_seed_user(attributes)
-#   mail = attributes['mail']
-#   user = User.where(mail: mail).first_or_create
-#   if user
-#       puts "This email address exists: #{mail}"
-
-#       # update the user with user.update(name: attributes['name'])
-#   else
-#       puts "This email address is new: #{mail}"
-#       User.create(attributes)
-#   end
-# end
+def db_seed_user(attributes)
+  mail = attributes['mail']
+  user = User.where(mail: mail).first_or_create
+  if user
+      puts "This email address exists: #{mail}"
+      user.update(name: attributes['name'])
+  else
+      puts "This email address is new: #{mail}"
+      User.create(attributes)
+  end
+end
